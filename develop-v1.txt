@@ -1,1 +1,34 @@
-develop version 1
+clone 远端资源库
+	git clone https://github.com/mazhao/gitbranchtest.git
+
+查看所有分支：
+	git branch -a
+	其中remotes/origin开头分支的是远端分支,其他是本地分支
+
+查看所在的分支
+	git status
+		查看所在的分支
+	git branch -a
+		查看所有分支（本地+远端），所在分支会被特殊标记
+	git branch 
+		查看所有本地分支，所在分支会被特殊标记
+		
+新建本地分支：
+	 git branch develop
+	 	基于当前所在分支创建新分支
+	 git checkout -b feature_sku5.0 develop
+	 	基于develop分支创建feature_sku5.0 分支
+		
+本地分支推送到远端
+	 git push origin develop 
+
+删除本地分支
+	git branch -d feature_sku5.0
+
+删除远端分支
+	git push origin --delete develop 
+	！！！谨慎使用！！！从远端删除分支
+	
+合并分支：
+	git merge --no-ff feature_sku5.0  -m "merge feature sku 5.0 to develop"
+		把feature_sku5.0分支的变更合并如当前所在分支
